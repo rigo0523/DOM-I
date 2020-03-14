@@ -43,6 +43,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 /// nav bar section
 const navBar = document.querySelectorAll('a');
+
   navBar[0].textContent = siteContent['nav']['nav-item-1'];
   navBar[1].textContent = siteContent['nav']['nav-item-2'];
   navBar[2].textContent = siteContent['nav']['nav-item-3'];
@@ -50,7 +51,7 @@ const navBar = document.querySelectorAll('a');
   navBar[4].textContent = siteContent['nav']['nav-item-5'];
   navBar[5].textContent = siteContent['nav']['nav-item-6'];
 
-  //a tags changed to green
+//green 
   navBar[0].style.color = 'green'
   navBar[1].style.color = 'green'
   navBar[2].style.color = 'green'
@@ -60,8 +61,13 @@ const navBar = document.querySelectorAll('a');
 
   
   // for(let key in navBar) {
-  //   navBar[key].style.color = 'red'
-  // } THIS BREAKS THE PAGE WHEN I CHANGE ALL LINKS TO GREEN, NEED HELP
+  //   navBar[key].style.color = 'green'
+  // } 
+
+  navBar.forEach(item => {
+    item.style.color = 'green'
+  })
+  // THIS BREAKS THE PAGE WHEN I CHANGE ALL LINKS TO GREEN, NEED HELP
 
 
 //logo section circle
@@ -137,16 +143,34 @@ newAnchorTag.style.background = 'black';
 newAnchorTag.style.fontSize = "1em"
 
 //PREPEND ON NAV BAR 
+
+
 let newAnchorBefore = document.createElement('a');
 let anchorBeforeText = document.createTextNode('1st link');
 newAnchorBefore.appendChild(anchorBeforeText);
 let appended = nav.prepend(newAnchorBefore);
-appended.style.color='red' // DOES NOT CHANGE THE COLOR TO RED NEED HELP
+//appended.style.color = 'red';
+const navBar2 = document.querySelectorAll('a');
+navBar2[0].style.color = 'red'
+console.log(navBar2[0])
 
 
+function my() {
 //STRETCH DOES NOT WORK NEED HELP 
-const aside = document.querySelector('aside');
+const aside = document.querySelector('h5');
+console.log(aside)
 aside.addEventListener("mouseenter", () => {
   aside.style.color = 'red';
-  aside.style.background = "green";
+  aside.style.textAlign= "center"
+  aside.style.padding = "20px"
+  aside.style.border = "2px solid blue"
 })
+
+aside.addEventListener("mouseleave", () => {
+  aside.style.color = 'red';
+  aside.style.background = 'white'
+  aside.style.border = 'none'
+})
+}
+
+my();
