@@ -40,3 +40,150 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+/// nav bar section
+const navBar = document.querySelectorAll('nav a');
+  navBar[0].textContent = siteContent['nav']['nav-item-1'];
+  navBar[1].textContent = siteContent['nav']['nav-item-2'];
+  navBar[2].textContent = siteContent['nav']['nav-item-3'];
+  navBar[3].textContent = siteContent['nav']['nav-item-4'];
+  navBar[4].textContent = siteContent['nav']['nav-item-5'];
+  navBar[5].textContent = siteContent['nav']['nav-item-6'];
+
+  //green 
+  navBar[0].style.color = 'green'
+  navBar[1].style.color = 'green'
+  navBar[2].style.color = 'green'
+  navBar[3].style.color = 'green'
+  navBar[4].style.color = 'green'
+  navBar[5].style.color = 'green'
+  
+  //iterate over anchor tags and change color to green
+  navBar.forEach(item => {
+    item.style.color = 'green'
+  })
+
+  //logo section header
+const h1 = document.querySelector('h1');
+h1.textContent = siteContent["cta"]["h1"];
+
+
+//button
+const button = document.querySelector('button');
+button.textContent = siteContent['cta']['button'];
+
+//logo
+const circleImage = document.getElementById("cta-img");
+circleImage.src = siteContent["cta"]["img-src"];
+
+//main contant feautures  
+
+//feautures
+const firstHeader = document.querySelectorAll('.top-content .text-content h4');
+  firstHeader[0].textContent = siteContent["main-content"]["features-h4"];
+  //iterate and change style color
+  firstHeader.forEach(item => {
+    item.style.color = 'blue'
+  })
+
+const featContent = document.querySelectorAll('.top-content .text-content p');
+  featContent[0].textContent = siteContent['main-content']['features-content']
+
+//About
+const secondHeader = document.querySelectorAll('.top-content .text-content h4');
+  secondHeader[1].textContent = siteContent["main-content"]["about-h4"];
+const aboutContent = document.querySelectorAll('.top-content .text-content p');
+  aboutContent[1].textContent = siteContent['main-content']['features-content']
+
+//middle image 
+const middleImage = document.querySelector('.middle-img');
+  middleImage.src = siteContent["main-content"]["middle-img-src"];
+
+
+//bottom content 
+
+//services
+const thirdHeader = document.querySelectorAll('.bottom-content .text-content h4');
+  thirdHeader[0].textContent = siteContent['main-content']['services-h4'];
+const thirdheadContent = document.querySelectorAll('.bottom-content .text-content p');
+  thirdheadContent[0].textContent = siteContent['main-content']['services-content'];
+//product
+const fourthCont = document.querySelectorAll('.bottom-content .text-content h4');
+  fourthCont[1].textContent = siteContent["main-content"]["product-h4"];
+const fourthPara = document.querySelectorAll('.bottom-content .text-content p');
+  fourthPara[1].textContent = siteContent['main-content']['product-content'];
+//vision
+const fifthCont = document.querySelectorAll('.bottom-content .text-content h4');
+  fourthCont[2].textContent = siteContent["main-content"]["vision-h4"];
+const fifthPara = document.querySelectorAll('.bottom-content .text-content p');
+  fourthPara[2].textContent = siteContent['main-content']['vision-content'];
+
+
+//contact section 
+const contact = document.querySelectorAll('.contact h4');
+  contact[0].textContent = siteContent['contact']['contact-h4'];
+
+  contact[0].addEventListener('mouseenter', (e) => {
+    e.target.style.background ="orange"
+  }) // change label 
+
+  //paragraphs
+const contactInfo = document.querySelectorAll('.contact p');
+  contactInfo[0].textContent = siteContent['contact']['address'];
+  contactInfo[1].textContent = siteContent['contact']['phone'];
+  contactInfo[2].textContent = siteContent['contact']['email'];
+
+//footer in DOT form instead of brackets 
+const footer1 = document.querySelectorAll('footer p');
+  footer1[0].textContent = siteContent.footer.copyright;
+
+//Append Child CREATE NEW A TAG 
+let nav = document.querySelector('nav'); // will append to the nav bar
+
+let newAnchor = document.createElement('a');
+let anchorText = document.createTextNode('Find Me');
+newAnchor.appendChild(anchorText); // same as adding textContent
+let newAnchorTag = nav.appendChild(newAnchor);
+newAnchorTag.style.background = 'black';
+newAnchorTag.style.fontSize = "1em"
+
+//PREPEND ON NAV BAR 
+
+
+let newAnchorBefore = document.createElement('a');
+let anchorBeforeText = document.createTextNode('1st link');
+newAnchorBefore.appendChild(anchorBeforeText);
+let appended = nav.prepend(newAnchorBefore);
+//appended.style.color = 'red';
+const navBar2 = document.querySelectorAll('a');
+navBar2[0].style.color = 'red'
+console.log(navBar2[0])
+
+// JUST FOR PRACTICE, COULD NOT THINK LOGICALLY ON THE TIMER AND GAVE UP ON IT
+function mouseCommand() {
+  
+  const aside = document.createElement('h5');
+  aside.textContent="test h5"
+
+  let footer = document.querySelector('footer')
+
+  footer.appendChild(aside) // append it to the footer
+
+  console.log(aside, 'aside')
+
+  aside.addEventListener("mouseenter", (e) => {
+    aside.style.color = 'red';
+    aside.style.textAlign= "center"
+    aside.style.padding = "20px"
+    aside.style.border = "10px solid blue"
+    e.target.style.fontSize = "100px" // can also use E.TARGET
+  })
+
+  aside.addEventListener("mouseleave", () => {
+    aside.style.color = 'red';
+    aside.style.background = 'white'
+    aside.style.border = 'none'
+  })
+}
+
+mouseCommand();
